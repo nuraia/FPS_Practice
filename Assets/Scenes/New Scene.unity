@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180ed6b0a47ab574d9541c86607bdc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPosition: {fileID: 1289745759}
+  cameraPosition: {fileID: 1221254997}
 --- !u!4 &644062361
 Transform:
   m_ObjectHideFlags: 0
@@ -1078,7 +1078,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1498447700}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &644155764
@@ -2879,11 +2880,11 @@ Transform:
   m_GameObject: {fileID: 1498447697}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 644062361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1498447701
 MonoBehaviour:
@@ -2899,7 +2900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 400
   sensY: 400
-  Oriantation: {fileID: 1289745759}
+  Oriantation: {fileID: 1221254997}
 --- !u!1 &1602017282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,5 +4383,4 @@ SceneRoots:
   - {fileID: 552526979}
   - {fileID: 1289745759}
   - {fileID: 1759469068}
-  - {fileID: 1498447700}
   - {fileID: 644062361}
