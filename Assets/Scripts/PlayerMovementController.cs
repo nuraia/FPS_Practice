@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class PlayerInput : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour
 {
 
     [SerializeField] private InputActionAsset InputActions;
