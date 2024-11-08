@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 public class PlayerControls : MonoBehaviour
 {
     [SerializeField] private PlayerInput m_playerInput;
@@ -90,21 +92,24 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Door"))
-        {
+        { Debug.Log("ENTER");
             moveCamera.offset = new Vector3(1.5f, 1.2f, -1.2f);
-            moveCamera.GetComponentInChildren<LooKAroundController>().enabled = false;
+           // moveCamera.GetComponentInChildren<LooKAroundController>().enabled = false;
         }
     }
 
-    private void OnCollisionExit(Collision col)
+    private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.CompareTag("Door"))
         {
+            Debug.Log("EXIT");
             moveCamera.offset = Vector3.zero;
-            moveCamera.GetComponentInChildren<LooKAroundController>().enabled = true;
+            //moveCamera.GetComponentInChildren<LooKAroundController>().enabled = true;
+            SceneManager.LoadScene(1);
         }
     }
+
 }

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Door
   - Obstacle
+  - trigger
+  - player
+  - car
+  - road1
+  - road2
   layers:
   - Default
   - TransparentFX
