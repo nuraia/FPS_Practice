@@ -14,16 +14,18 @@ public class CollectableHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0f, 20 * Time.deltaTime, 0f);
     }
 
-    void OnCollisionEnter(Collision col)
-    { Debug.Log("HEHE");
+    void OnTriggerEnter(Collider col)
+    {
         if (col.gameObject.CompareTag("car"))
         {
-            UIManager.Instance.score++;
+            UIManager.Instance.Score++;
             UIManager.Instance.PointIncrease();
             Destroy(gameObject);
+            
         }
     }
+    
 }

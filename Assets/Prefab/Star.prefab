@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5319899416640501805}
   - component: {fileID: 3394931054013423691}
   - component: {fileID: 2195052159225388284}
+  - component: {fileID: -1667505026114676088}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -97,3 +98,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d912444f70d217e4ebcf7390d499977b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-1667505026114676088
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778321052047142472}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6, y: 0.6, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
