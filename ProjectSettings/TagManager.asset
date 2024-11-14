@@ -11,6 +11,7 @@ TagManager:
   - car
   - road1
   - road2
+  - collectable
   layers:
   - Default
   - TransparentFX
