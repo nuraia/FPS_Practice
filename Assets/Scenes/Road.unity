@@ -1207,11 +1207,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666546981}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9c1d2e9353ff444a9f6107cfe8c355e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectablePrefab:
+  - {fileID: 5140971251448557750, guid: 88fa74ad747d26b4d9a1f2b6db70f478, type: 3}
+  - {fileID: 5925437209501762623, guid: 2e1fe84393e68574abc0a94205a79093, type: 3}
+  - {fileID: 7257634927076607250, guid: 727bba55acc8d3a4ebed076317a84b89, type: 3}
+  - {fileID: 1778321052047142472, guid: b8fe4a16347e008458743c98b929bda5, type: 3}
   roadSpeed: 10
 --- !u!1 &684864584
 GameObject:
@@ -1266,7 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6603774, g: 0.4765931, b: 0.4765931, a: 0.2627451}
+  m_Color: {r: 0.6603774, g: 0.4765931, b: 0.4765931, a: 0.72156864}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1435,11 +1440,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780190321}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9c1d2e9353ff444a9f6107cfe8c355e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectablePrefab:
+  - {fileID: 5140971251448557750, guid: 88fa74ad747d26b4d9a1f2b6db70f478, type: 3}
+  - {fileID: 5925437209501762623, guid: 2e1fe84393e68574abc0a94205a79093, type: 3}
+  - {fileID: 7257634927076607250, guid: 727bba55acc8d3a4ebed076317a84b89, type: 3}
+  - {fileID: 1778321052047142472, guid: b8fe4a16347e008458743c98b929bda5, type: 3}
   roadSpeed: 10
 --- !u!1 &944520038
 GameObject:
@@ -1537,12 +1547,6 @@ MonoBehaviour:
   obstaclePrefab:
   - {fileID: 4786288961805721305, guid: c2a370c580cfe5b43ad95ec0ae4ce34e, type: 3}
   - {fileID: 6255584220695566641, guid: 3908d721c6f35d34f9143f22fef9ec5c, type: 3}
-  collectablePrefab:
-  - {fileID: 5140971251448557750, guid: 88fa74ad747d26b4d9a1f2b6db70f478, type: 3}
-  - {fileID: 5925437209501762623, guid: 2e1fe84393e68574abc0a94205a79093, type: 3}
-  - {fileID: 8439527149333823891, guid: f039be691bb92134a94bdc56a0fe8c90, type: 3}
-  - {fileID: 7257634927076607250, guid: 727bba55acc8d3a4ebed076317a84b89, type: 3}
-  - {fileID: 1778321052047142472, guid: b8fe4a16347e008458743c98b929bda5, type: 3}
 --- !u!4 &1024677834
 Transform:
   m_ObjectHideFlags: 0
@@ -2347,7 +2351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafa10b1dc457144fac9a6274f71e3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadSpawner: {fileID: 440522941}
+  roadSpawner: {fileID: 0}
   forwardSpeed: 20
 --- !u!143 &1650013212
 CharacterController:
@@ -2945,11 +2949,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006176044}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9c1d2e9353ff444a9f6107cfe8c355e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectablePrefab:
+  - {fileID: 5140971251448557750, guid: 88fa74ad747d26b4d9a1f2b6db70f478, type: 3}
+  - {fileID: 5925437209501762623, guid: 2e1fe84393e68574abc0a94205a79093, type: 3}
+  - {fileID: 7257634927076607250, guid: 727bba55acc8d3a4ebed076317a84b89, type: 3}
+  - {fileID: 1778321052047142472, guid: b8fe4a16347e008458743c98b929bda5, type: 3}
   roadSpeed: 10
 --- !u!1 &2107058425
 GameObject:

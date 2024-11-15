@@ -59,7 +59,11 @@ public class CarMovementController : MonoBehaviour
         if (col.gameObject.CompareTag("Obstacle"))
         {
             gameObject.GetComponent<CarMovementController>().enabled = false;
-            roadSpawner.GetComponent<RoadSpawner>().enabled = false;
+         
+            roadSpawner.road1.GetComponent<RoadMovement>().enabled = false;
+            roadSpawner.road2.GetComponent<RoadMovement>().enabled = false;
+            roadSpawner.road3.GetComponent<RoadMovement>().enabled = false;
+            
             UIManager.Instance.GameOver();
         }
         if(col.gameObject.CompareTag("collectable"))

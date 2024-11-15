@@ -30,20 +30,11 @@ public class RoadSpawner : MonoBehaviour
     
     void FixedUpdate()
     {
-        MoveRoad(road1);
-        MoveRoad(road2);
-        MoveRoad(road3);
-
         CheckAndResetRoad(ref road1, ref road1StartPos);
         CheckAndResetRoad(ref road2, ref road2StartPos);
         CheckAndResetRoad(ref road3, ref road3StartPos);
-
     }
-    void MoveRoad(GameObject road)
-    {
-        road.transform.Translate(Vector3.back * roadSpeed * Time.deltaTime);
-    }
-
+   
 
     void CheckAndResetRoad(ref GameObject road, ref Vector3 roadStartPos)
     {

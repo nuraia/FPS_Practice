@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class StartInteract : MonoBehaviour, IInteractable
 {
+    void Update()
+    {
+        transform.Rotate(0, 20 * Time.deltaTime, 0);
+    }
     public void Increase()
     {
         UIManager.Instance.Score ++;
