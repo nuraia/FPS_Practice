@@ -62,7 +62,7 @@ public class CarMovementController : MonoBehaviour
          
             roadSpawner.road1.GetComponent<RoadMovement>().enabled = false;
             roadSpawner.road2.GetComponent<RoadMovement>().enabled = false;
-            roadSpawner.road3.GetComponent<RoadMovement>().enabled = false;
+            //roadSpawner.road3.GetComponent<RoadMovement>().enabled = false;
             
             UIManager.Instance.GameOver();
         }
