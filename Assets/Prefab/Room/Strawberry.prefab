@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 9178176124046990687}
   - component: {fileID: 6663781495858906361}
   - component: {fileID: 6760723579356308614}
-  - component: {fileID: -3598137983888233706}
   - component: {fileID: -746955599547801916}
   m_Layer: 0
   m_Name: Strawberry
@@ -158,19 +157,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.571856, y: 7.274042, z: 1.5492897}
   m_Center: {x: -0.48816085, y: -1.0092535, z: -0.0000002235174}
---- !u!114 &-3598137983888233706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5933985367490427583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d573858c82ab1ff48a5566fcfe55244d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 434fe1f6f5e25434eb9c8e23a79f32f1, type: 2}
 --- !u!114 &-746955599547801916
 MonoBehaviour:
   m_ObjectHideFlags: 0
