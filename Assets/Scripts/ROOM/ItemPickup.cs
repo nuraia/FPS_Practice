@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
+using System;
 public class ItemPickup : MonoBehaviour
 {
+    public static Action<Item> OnPickedUp;
     public Item item;
     public bool inRange = false;
     public void Pickup()
     {
-        InvetorySystem.Instance.AddItem(item);
+        OnPickedUp?.Invoke(item);
         Destroy(gameObject);
     }
 

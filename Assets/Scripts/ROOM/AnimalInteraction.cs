@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnimalInteraction : MonoBehaviour
@@ -15,5 +12,7 @@ public class AnimalInteraction : MonoBehaviour
     void OnTriggerExit(Collider col)
     {
         isCatinRange = false;
+        DialogueManager.Instance.EndDialogue();
+        //DialogueManager.Instance.animator.SetBool("IsOpen", false);
     }
 }
