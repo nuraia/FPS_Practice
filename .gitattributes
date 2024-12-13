@@ -1,2 +1,10 @@
-# Auto detect text files and perform LF normalization
+# Normalize all text files to LF
 * text=auto
+
+# Force specific file types to use LF
+*.sh text eol=lf
+*.py text eol=lf
+
+# Force specific file types to use CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf

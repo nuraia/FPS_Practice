@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        dialogueBox.DOAnchorPos(new Vector2(-100, -800), 0.0001f);
+        
     }
 
     public void StartDialogue(Dialogue dialogue)

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ac49e08b6c75ab46bcf6eccf87fd398, type: 3}
-  m_Name: Strawberry
+  m_Name: StrawberryCake
   m_EditorClassIdentifier: 
-  id: 1
-  itemName: Strawberry
-  value: 5
-  image: {fileID: 21300000, guid: 8ef30026621dafc4e8e30466dcfc6115, type: 3}
-  itemObject: {fileID: 2380274916805294372, guid: 4cff40cefa656cd47bc206b33441b49f, type: 3}
+  id: 3
+  itemName: Strawberry Cake
+  value: 20
+  image: {fileID: 21300000, guid: 0d30ad2c6bb4666418f30dd0a3de9f50, type: 3}
+  itemObject: {fileID: 120390543840793016, guid: 8d188712eddf3754f9a1f36dbc9b1540, type: 3}

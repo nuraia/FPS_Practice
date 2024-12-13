@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI CoinText;
     public GameObject GameOverPanel;
     public GameObject GamePlayPanel;
+    public RectTransform InventoryPanel;
     public int Score ;
     public int Life;
     public int Coin;
@@ -63,5 +65,14 @@ public class UIManager : MonoBehaviour
     {
         Coin++;
         CoinText.text = Coin + "";
+    }
+
+    public void OpenInventoryPanel()
+    {
+        InventoryPanel.DOAnchorPos(new Vector2(350, 0), 0.5f);
+    }
+    public void CloseInventoryPanel()
+    {
+        InventoryPanel.DOAnchorPos(new Vector2(-300, 0), 0.5f);
     }
 }
