@@ -8,6 +8,7 @@ public class InvetorySystem : MonoBehaviour
     public List<Item> Items = new List<Item>();
     public static InvetorySystem Instance;
     public GameObject itemPrefab;
+    public GameObject slotPrefab;
     public Transform inventoryContent;
     private int index;
     void Awake()
