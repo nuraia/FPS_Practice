@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InvetorySystem : MonoBehaviour
 {
@@ -27,14 +28,18 @@ public class InvetorySystem : MonoBehaviour
         Items.Add(item);
         //Debug.Log($"{item.itemName} added");
         GameObject obj = Instantiate(itemPrefab, inventoryContent);
-        RectTransform objRect = obj.GetComponent<RectTransform>();
-        objRect.localPosition = Vector3.zero;
-        objRect.localScale = Vector3.one;
+        Transform objt = obj.GetComponent<Transform>();
+        objt.localPosition = Vector3.zero;
+        objt.localScale = Vector3.one;
         obj.transform.SetParent(inventoryContent, false);
         Image objImage = itemPrefab.GetComponentInChildren<Image>();
         objImage.sprite = item.image;
         index++;
     }
 
-
+    public void RemoveItem(GameObject obj)
+    {
+        //Items.Remove();
+        Debug.Log(obj);
+    }
 }
