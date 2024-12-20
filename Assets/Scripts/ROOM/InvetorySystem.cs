@@ -9,7 +9,7 @@ public class InvetorySystem : MonoBehaviour
     public List<Item> Items = new List<Item>();
     public static InvetorySystem Instance;
     public GameObject itemPrefab;
-    public GameObject slotPrefab;
+    public GameObject player;
     public Transform inventoryContent;
  
     void Awake()
@@ -35,12 +35,19 @@ public class InvetorySystem : MonoBehaviour
         objt.localScale = Vector3.one;
         obj.transform.SetParent(inventoryContent, false);
         var itemBase = obj.GetComponent<UIItemBase>();
-        itemBase.SetInfo(item.itemName, item.id);
+        itemBase.SetInfo(item.itemName, item.id, item.itemObject);
     }
 
     public void RemoveItem(GameObject obj)
     {
-        //Items.Remove();
-        Debug.Log(obj);
+        UIItemBase itemBase = obj.GetComponent<UIItemBase>();
+        Item itemtoRemoved = Items.Find(item => item.id == itemBase.itemId);
+        if (itemtoRemoved != null)
+        {
+            Items.Remove(itemtoRemoved);
+            Vector3 newPos = new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f));
+            var newobj =  Instantiate(itemBase.itemPrefab, newPos, Quaternion.identity);
+            Destroy(obj);
+        }
     }
 }

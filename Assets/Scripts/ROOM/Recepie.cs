@@ -8,6 +8,5 @@ public class Recepie : ScriptableObject
 {
     public string id;
     public Item finalRecepie;
-    public GameObject recepiePrefab;
     public List<Item> Ingredients = new List<Item>();
 }

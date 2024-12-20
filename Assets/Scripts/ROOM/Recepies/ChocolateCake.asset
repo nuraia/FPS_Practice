@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b15293d76e54646ab7ff27f1ea891f, type: 3}
+  m_Name: ChocolateCake
+  m_EditorClassIdentifier: 
+  id: 222
+  finalRecepie: {fileID: 11400000, guid: 080172a925618184797902e3ca5ac96a, type: 2}
+  Ingredients:
+  - {fileID: 11400000, guid: 2df2f32dbbf0bf347b05854989cf123a, type: 2}
+  - {fileID: 11400000, guid: 2df2f32dbbf0bf347b05854989cf123a, type: 2}
+  - {fileID: 11400000, guid: 2df2f32dbbf0bf347b05854989cf123a, type: 2}
