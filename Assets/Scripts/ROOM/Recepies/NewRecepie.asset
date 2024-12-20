@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b15293d76e54646ab7ff27f1ea891f, type: 3}
   m_Name: NewRecepie
   m_EditorClassIdentifier: 
+  id: 111
   finalRecepie: {fileID: 11400000, guid: 45d61c092ecf38f438a3653e8befc9a7, type: 2}
+  recepiePrefab: {fileID: 7309250785854668047, guid: 32e3a17645668ff439adb46ded3ae18a, type: 3}
   Ingredients:
   - {fileID: 11400000, guid: 434fe1f6f5e25434eb9c8e23a79f32f1, type: 2}
   - {fileID: 11400000, guid: 434fe1f6f5e25434eb9c8e23a79f32f1, type: 2}

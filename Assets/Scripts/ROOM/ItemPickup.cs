@@ -10,7 +10,7 @@ public class ItemPickup : MonoBehaviour
     {
         OnPickedUp?.Invoke(item);
         OnCoinCollected?.Invoke();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider col)

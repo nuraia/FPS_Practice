@@ -11,12 +11,12 @@ public class InvetorySystem : MonoBehaviour
     public GameObject itemPrefab;
     public GameObject slotPrefab;
     public Transform inventoryContent;
-    private int index;
+ 
     void Awake()
     {
         Instance = this;
         ItemPickup.OnPickedUp += AddItem;
-        index = 0;
+    
     }
 
     private void OnDestroy()
@@ -27,14 +27,15 @@ public class InvetorySystem : MonoBehaviour
     {
         Items.Add(item);
         //Debug.Log($"{item.itemName} added");
+        Image objImage = itemPrefab.GetComponentInChildren<Image>();
+        objImage.sprite = item.image;
         GameObject obj = Instantiate(itemPrefab, inventoryContent);
         Transform objt = obj.GetComponent<Transform>();
         objt.localPosition = Vector3.zero;
         objt.localScale = Vector3.one;
         obj.transform.SetParent(inventoryContent, false);
-        Image objImage = itemPrefab.GetComponentInChildren<Image>();
-        objImage.sprite = item.image;
-        index++;
+        var itemBase = obj.GetComponent<UIItemBase>();
+        itemBase.SetInfo(item.itemName, item.id);
     }
 
     public void RemoveItem(GameObject obj)

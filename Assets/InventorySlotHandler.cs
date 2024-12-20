@@ -11,13 +11,13 @@ public class InventorySlotHandler : MonoBehaviour, IDropHandler
         DraggableItem draggableItem = dropped.GetComponent<DraggableItem>();
         if (draggableItem != null)
         {
-            Debug.Log("exist");
+           // Debug.Log("exist");
             dropped.transform.SetParent(gameObject.transform);
             draggableItem.ParentAfterDrag = transform;
         }
         else
         {
-            Debug.LogError("not exist");
+            //Debug.LogError("not exist");
         }
     }
 }

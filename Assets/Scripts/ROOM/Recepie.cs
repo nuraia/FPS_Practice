@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewRecepie", menuName = "Recepie/Create New Recepie")]
 public class Recepie : ScriptableObject
 {
+    public string id;
     public Item finalRecepie;
+    public GameObject recepiePrefab;
     public List<Item> Ingredients = new List<Item>();
 }
