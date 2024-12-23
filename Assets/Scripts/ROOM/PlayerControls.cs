@@ -82,7 +82,7 @@ public class PlayerControls : MonoBehaviour
         right.Normalize();
 
         Vector3 moveDirection = forward * direction.y + right * direction.x;
-        _characterController.Move(moveDirection * Time.deltaTime);
+        _characterController.Move(moveDirection * Time.deltaTime * 3);
 
     }
 
@@ -95,7 +95,7 @@ public class PlayerControls : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Door"))
-        { Debug.Log("ENTER");
+        { //Debug.Log("ENTER");
             moveCamera.offset = new Vector3(1.5f, 1.2f, -1.2f);
            // moveCamera.GetComponentInChildren<LooKAroundController>().enabled = false;
         }
@@ -105,7 +105,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Door"))
         {
-            Debug.Log("EXIT");
+            //Debug.Log("EXIT");
             moveCamera.offset = Vector3.zero;
             //moveCamera.GetComponentInChildren<LooKAroundController>().enabled = true;
             UIManager.Instance.POPUpGamePlayPanel();

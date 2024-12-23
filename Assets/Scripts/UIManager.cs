@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject GamePlayPanel;
     public RectTransform InventoryPanel;
+    public Button playButton;
     public int Score ;
     public int Life;
     public int Coin;
@@ -47,11 +48,12 @@ public class UIManager : MonoBehaviour
     public void POPUpGamePlayPanel()
     {
         GamePlayPanel.SetActive(true);
-
+        playButton.onClick.AddListener(OnClickPlay);
     }
 
     public void OnClickPlay()
     {
+        Debug.Log("PLAY");
         SceneManager.LoadScene(1);
     }
 
