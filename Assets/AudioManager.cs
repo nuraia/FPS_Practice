@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     private AudioSource audioSource;
     public AudioClip CollectSound;
+    public AudioClip ShotSound;
+    public AudioClip ReloadSound;
     void Awake()
     {
         Instance = this;
@@ -27,5 +29,13 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(CollectSound);
         
+    }
+    public void PlayShotSound()
+    {
+        audioSource.PlayOneShot(ShotSound);
+    }
+    public void PlayReloadSound()
+    {
+        audioSource.PlayOneShot(ReloadSound);
     }
 }

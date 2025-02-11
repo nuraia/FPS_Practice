@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private PlayerInput m_playerInput;
     private InputAction moveAction;
     private InputAction jump;
+    private InputAction shoot;
     private bool IsGrounded;
     private Vector3 m_playerVelocity;
     private float jumpHeight = 0.5f;
@@ -21,12 +22,14 @@ public class PlayerControls : MonoBehaviour
     public MoveCamera moveCamera;
     private Camera cam;
     public GameObject instatiatedPanel;
+    public BulletController bulletController;
     void Start()
     {
         _characterController = GetComponent<CharacterController>(); 
         m_playerInput = GetComponent<PlayerInput>();
         moveAction = m_playerInput.actions.FindAction("Movement");
         jump = m_playerInput.actions.FindAction("Jump");
+        shoot = m_playerInput.actions.FindAction("Fire");
         playerCamera = Camera.main.transform;
     }
 
@@ -63,6 +66,13 @@ public class PlayerControls : MonoBehaviour
                 }
             }
         }
+        if(bulletController != null)
+        {
+            if (shoot.IsPressed())
+            {
+                bulletController.GunShooting(true);
+            }
+        }
     }
 
     IEnumerator PanelStay(GameObject intantiatedPanel)
@@ -74,16 +84,8 @@ public class PlayerControls : MonoBehaviour
     private void MovePlayer()
     {
         Vector2 direction = moveAction.ReadValue<Vector2>();
-        Vector3 forward = playerCamera.forward;
-        Vector3 right = playerCamera.right;
-        forward.y = 0f;
-        right.y = 0f;
-        forward.Normalize();
-        right.Normalize();
-
-        Vector3 moveDirection = forward * direction.y + right * direction.x;
+        Vector3 moveDirection = transform.forward * direction.y + transform.right * direction.x;
         _characterController.Move(moveDirection * Time.deltaTime * 3);
-
     }
 
     private void JumpPlayer()

@@ -19,7 +19,8 @@ public class UIManager : MonoBehaviour
     public GameObject GamePlayPanel;
     public RectTransform InventoryPanel;
     public Button playButton;
-    public int Score ;
+    public Button InventoryButton;
+    public int Score;
     public int Life;
     public int Coin;
     void Awake()
@@ -30,7 +31,7 @@ public class UIManager : MonoBehaviour
         Life = 0;
         Coin = 0;
         //GameOverPanel.SetActive(false);
-
+        InventoryButton.onClick.AddListener(OpenInventoryPanel);
     }
 
     public void GameOver()
@@ -68,13 +69,26 @@ public class UIManager : MonoBehaviour
         Coin++;
         CoinText.text = Coin + "";
     }
-
+    void OnGUI()
+    {
+        if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.I)
+        {
+            OpenInventoryPanel();
+        }
+    }
     public void OpenInventoryPanel()
     {
-        InventoryPanel.DOAnchorPos(new Vector2(350, 0), 0.5f);
+        InventoryPanel.DOAnchorPos(new Vector2(350, 0), 0.5f).SetUpdate(true); 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
     }
+
     public void CloseInventoryPanel()
     {
-        InventoryPanel.DOAnchorPos(new Vector2(-300, 0), 0.5f);
+        InventoryPanel.DOAnchorPos(new Vector2(-300, 0), 0.5f).SetUpdate(true); 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
     }
 }

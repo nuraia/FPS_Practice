@@ -22,12 +22,19 @@ public class ItemPickup : MonoBehaviour
     {
         inRange = false;
     }
-    void OnMouseDown()
+    //void OnMouseDown()
+    //{
+    //    if (inRange)
+    //    {
+    //        Pickup();
+    //    }
+
+    //}
+    void OnGUI()
     {
-        if (inRange)
+        if (inRange && Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Space)
         {
             Pickup();
         }
-      
     }
 }
