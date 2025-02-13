@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,6 +24,26 @@ public class UIManager : MonoBehaviour
     public int Score;
     public int Life;
     public int Coin;
+
+    //[Header("Inventory Action Map Name Reference")]
+    //[SerializeField] private string actionmapName2 = "InventorySystem";
+
+    //[Header("Action Name Reference")]
+   
+    //[SerializeField] private string navigate = "Navigate";
+    //[SerializeField] private string select = "Select";
+    //[SerializeField] private string drop = "Drop";
+
+   
+    //public InputAction navigateAction;
+    //public InputAction selectAction;
+    //public InputAction dropAction;
+
+    //public Vector2 MoveInput { get; private set; }
+    //public Vector2 LookInput { get; private set; }
+    //public bool JumpInput { get; private set; }
+    //public bool FireInput { get; private set; }
+    //public bool CollectInput { get; private set; }
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -31,9 +52,9 @@ public class UIManager : MonoBehaviour
         Life = 0;
         Coin = 0;
         //GameOverPanel.SetActive(false);
-        InventoryButton.onClick.AddListener(OpenInventoryPanel);
+        
     }
-
+   
     public void GameOver()
     {
         Point.text = "";
@@ -69,19 +90,13 @@ public class UIManager : MonoBehaviour
         Coin++;
         CoinText.text = Coin + "";
     }
-    void OnGUI()
-    {
-        if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.I)
-        {
-            OpenInventoryPanel();
-        }
-    }
+
     public void OpenInventoryPanel()
     {
         InventoryPanel.DOAnchorPos(new Vector2(350, 0), 0.5f).SetUpdate(true); 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0f;
+  
     }
 
     public void CloseInventoryPanel()
@@ -89,6 +104,6 @@ public class UIManager : MonoBehaviour
         InventoryPanel.DOAnchorPos(new Vector2(-300, 0), 0.5f).SetUpdate(true); 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Time.timeScale = 1f;
+        FPSController.instance.playerInput.SwitchCurrentActionMap("Player");
     }
 }

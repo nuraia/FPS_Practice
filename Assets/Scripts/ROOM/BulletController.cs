@@ -17,22 +17,28 @@ public class BulletController : MonoBehaviour
     public int magazineSize = 30;
     public float reloadTime = 2f;
     public bool isReloading;
+
     public Camera fpsCam;
+
     public ParticleSystem gunParticleSystem;
     public GameObject impactEffect;
+
     public TextMeshProUGUI ammotext;
-    private Vector3 position;
+ 
+    public FPSController fpsController;
     private void Awake()
     {
         
         currAmmo = maxAmmo;
-        position = transform.position;
+       
         AmmoIncreasePickable.OnAmmoIncreaseCollected += ReloadMagazineSize;
+        fpsController.fireAction.performed += OnShootPerformed;
        
     }
     void OnDisable()
     {
         AmmoIncreasePickable.OnAmmoIncreaseCollected -= ReloadMagazineSize;
+        fpsController.fireAction.performed -= OnShootPerformed;
     }
     void Update()
     {
@@ -48,15 +54,15 @@ public class BulletController : MonoBehaviour
         }
         ammotext.text = currAmmo + " / " + magazineSize;
     }
-    public void GunShooting(bool isShoot)
+    public void OnShootPerformed(InputAction.CallbackContext context)
     {
-        if (isShoot && Time.time >= nextTimeToFire)
+        if (!isReloading && currAmmo > 0 && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
     }
-
+    
     void Shoot()
     {
         AudioManager.Instance.PlayShotSound();

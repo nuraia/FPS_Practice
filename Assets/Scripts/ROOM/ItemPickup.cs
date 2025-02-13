@@ -1,11 +1,21 @@
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 public class ItemPickup : MonoBehaviour
 {
     public static Action<Item> OnPickedUp;
     public static event Action OnCoinCollected;
     public Item item;
     public bool inRange = false;
+
+    private void OnEnable()
+    {
+        FPSController.instance.collectAction.performed += OnPickedUpItem;
+    }
+    private void OnDisable()
+    {
+        FPSController.instance.collectAction.performed -= OnPickedUpItem;
+    }
     public void Pickup()
     {
         OnPickedUp?.Invoke(item);
@@ -22,19 +32,20 @@ public class ItemPickup : MonoBehaviour
     {
         inRange = false;
     }
-    //void OnMouseDown()
-    //{
-    //    if (inRange)
-    //    {
-    //        Pickup();
-    //    }
-
-    //}
-    void OnGUI()
+    public void OnPickedUpItem(InputAction.CallbackContext context)
     {
-        if (inRange && Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Space)
+        if (inRange)
         {
             Pickup();
         }
+
     }
+    //void OnGUI()
+    //{
+    //    if (inRange && Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Space)
+    //    {
+    //        Pickup();
+    //    }
+    //}
+
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.InputSystem;
 
 public class InvetorySystem : MonoBehaviour
 {
@@ -11,7 +11,8 @@ public class InvetorySystem : MonoBehaviour
     public GameObject itemPrefab;
     public GameObject player;
     public Transform inventoryContent;
- 
+
+   
     void Awake()
     {
         Instance = this;
