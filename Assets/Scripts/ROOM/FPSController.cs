@@ -37,12 +37,16 @@ public class FPSController : MonoBehaviour
     public bool inventoryButtonInput { get; private set; }
     void Awake()
     {
-        if(instance == null)
+        Debug.Log("FPSController Awake");
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+        }
         moveAction = playerControls.FindActionMap(actionmapName).FindAction(move);
         lookAction = playerControls.FindActionMap(actionmapName).FindAction(look);
         jumpAction = playerControls.FindActionMap(actionmapName).FindAction(jump);
@@ -93,7 +97,7 @@ public class FPSController : MonoBehaviour
     }
 
     public void SwitchActionMap(InputAction.CallbackContext context)
-    {
+    {                     
         playerInput.SwitchCurrentActionMap("InventorySystem");
         UIManager.Instance.OpenInventoryPanel();
     }

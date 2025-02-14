@@ -11,7 +11,6 @@ public class PlayerControls : MonoBehaviour
 {
     [Header("Movement Speeds")]
     [SerializeField] private float walkSpeed = 3f;
-    [SerializeField] private float sprintMultiplier = 2f;
 
     [Header("Camera Settings")]
     [SerializeField] private bool invertYAxis = false;

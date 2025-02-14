@@ -1193,6 +1193,7 @@ MonoBehaviour:
   GamePlayPanel: {fileID: 0}
   InventoryPanel: {fileID: 0}
   playButton: {fileID: 0}
+  InventoryButton: {fileID: 0}
   Score: 0
   Life: 0
   Coin: 0

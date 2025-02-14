@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        
+        dialogueBox.DOAnchorPos(new Vector2(-100, -1200), 0.25f);
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
-        dialogueBox.DOAnchorPos(new Vector2(-100, -800), 0.25f);
+        dialogueBox.DOAnchorPos(new Vector2(-100, -1200), 0.25f);
         //animator.SetBool("IsOpen", false);
     }
     

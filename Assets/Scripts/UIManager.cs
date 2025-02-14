@@ -25,27 +25,10 @@ public class UIManager : MonoBehaviour
     public int Life;
     public int Coin;
 
-    //[Header("Inventory Action Map Name Reference")]
-    //[SerializeField] private string actionmapName2 = "InventorySystem";
-
-    //[Header("Action Name Reference")]
-   
-    //[SerializeField] private string navigate = "Navigate";
-    //[SerializeField] private string select = "Select";
-    //[SerializeField] private string drop = "Drop";
-
-   
-    //public InputAction navigateAction;
-    //public InputAction selectAction;
-    //public InputAction dropAction;
-
-    //public Vector2 MoveInput { get; private set; }
-    //public Vector2 LookInput { get; private set; }
-    //public bool JumpInput { get; private set; }
-    //public bool FireInput { get; private set; }
-    //public bool CollectInput { get; private set; }
     void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         Score = 0;

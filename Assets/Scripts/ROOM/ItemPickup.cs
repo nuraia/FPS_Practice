@@ -8,13 +8,22 @@ public class ItemPickup : MonoBehaviour
     public Item item;
     public bool inRange = false;
 
-    private void OnEnable()
+    private void Start()
     {
-        FPSController.instance.collectAction.performed += OnPickedUpItem;
+       // Debug.Log("ItemPickup OnEnable");
+        if (FPSController.instance != null)
+        {
+            FPSController.instance.collectAction.performed += OnPickedUpItem;
+        }
+        else
+        {
+            Debug.LogError("FPSController instance is null. Ensure FPSController is initialized before ItemPickup.");
+        }
     }
     private void OnDisable()
     {
         FPSController.instance.collectAction.performed -= OnPickedUpItem;
+        
     }
     public void Pickup()
     {
