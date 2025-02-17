@@ -40,17 +40,17 @@ public class EnemyAI : MonoBehaviour
 
         if (!playerInSightRange && !playerInAttckRange)
         {
-            Debug.Log("Patrolling");
+            //Debug.Log("Patrolling");
             Patroling();
         }
         if (playerInSightRange && !playerInAttckRange)
         {
-            Debug.Log("Chasing Player");
+            //Debug.Log("Chasing Player");
             ChasingPlayer();
         }
         if (playerInSightRange && playerInAttckRange)
         {
-            Debug.Log("Attacking Player");
+            //Debug.Log("Attacking Player");
             AttackingPlayer();
         }
     }
@@ -62,13 +62,11 @@ public class EnemyAI : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
-            Debug.Log("Moving to Walk Point: " + walkPoint);
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1f)
         {
-            Debug.Log("Reached Walk Point");
             walkPointSet = false;
         }
     }
@@ -81,7 +79,6 @@ public class EnemyAI : MonoBehaviour
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
         if (Physics.Raycast(walkPoint, -transform.up, 2f, WhatIsGround))
         {
-            Debug.Log("Walk Point Set: " + walkPoint);
             walkPointSet = true;
         }
         else
@@ -93,7 +90,7 @@ public class EnemyAI : MonoBehaviour
     void ChasingPlayer()
     {
         agent.SetDestination(player.position);
-        Debug.Log("Chasing Player: " + player.position);
+        //Debug.Log("Chasing Player: " + player.position);
     }
 
     void AttackingPlayer()
@@ -103,10 +100,11 @@ public class EnemyAI : MonoBehaviour
 
         if (!IsAlreadyAttacked)
         {
-            Rigidbody rd = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            var enemyInstantiatedBullet = Instantiate(projectile, transform.position, Quaternion.identity);
+            Rigidbody rd = enemyInstantiatedBullet.GetComponent<Rigidbody>();
             rd.AddForce(transform.forward * 32f, ForceMode.Impulse);
             IsAlreadyAttacked = true;
-            Destroy(rd, 2f);
+            Destroy(enemyInstantiatedBullet, 2f);
             Invoke(nameof(ResetAttck), timeBetweenAttck);
         }
     }
@@ -116,7 +114,7 @@ public class EnemyAI : MonoBehaviour
         IsAlreadyAttacked = false;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);

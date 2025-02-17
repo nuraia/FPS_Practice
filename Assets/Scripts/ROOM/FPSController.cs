@@ -37,7 +37,7 @@ public class FPSController : MonoBehaviour
     public bool inventoryButtonInput { get; private set; }
     void Awake()
     {
-        Debug.Log("FPSController Awake");
+        //Debug.Log("FPSController Awake");
         if (instance == null)
         {
             instance = this;
