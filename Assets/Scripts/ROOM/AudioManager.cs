@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
   
-    public Slider volumnSlider;
+   
     public static AudioManager Instance;
     private AudioSource audioSource;
     public AudioClip CollectSound;
@@ -18,18 +18,7 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         audioSource = GetComponent<AudioSource>();
     }
-    private void Start()
-    {
-        if (!PlayerPrefs.HasKey("musicVolumn"))
-        {
-            PlayerPrefs.GetFloat("musicVolumn", 1);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
-    }
+    
     private void OnEnable()
     {
         ItemPickup.OnCoinCollected += PlayCollectSound;
@@ -52,17 +41,5 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(ReloadSound);
     }
-    public void ChangeVolumn()
-    {
-        AudioListener.volume = volumnSlider.value;
-        Save();
-    }
-    private void Load()
-    {
-        volumnSlider.value = PlayerPrefs.GetFloat("musicVolumn");
-    }
-    private void Save()
-    {
-        PlayerPrefs.SetFloat("musicVolumn", volumnSlider.value);
-    }
+
 }

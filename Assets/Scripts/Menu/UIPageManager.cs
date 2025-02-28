@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class UIPageManager : MonoBehaviour
 {
-    public List<Page> Pages = new();
+    [SerializeField]private List<Page> Pages = new();
+    private Dictionary<string, Page> pageDictionary = new Dictionary<string, Page>();
     public Page currentPage;
    
     void Start()
     {
         ShowPage("MainPage");
+        InitializePages();
     }
-
+    private void InitializePages()
+    {
+    }
 
     public void ShowPage(string pageName)
     {
@@ -22,10 +26,10 @@ public class UIPageManager : MonoBehaviour
        
         foreach (Page p in Pages)
         {
-            
+
             if (p.pageName == pageName)
             {
-                //Debug.Log("match");
+                Debug.Log("match");
                 p.PageOpen();
                 currentPage = p;
                 break;

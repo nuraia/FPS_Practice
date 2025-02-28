@@ -616,9 +616,9 @@ RectTransform:
   - {fileID: 670715488}
   m_Father: {fileID: 108447936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190770825
@@ -803,13 +803,15 @@ GameObject:
   - component: {fileID: 226767748}
   - component: {fileID: 226767750}
   - component: {fileID: 226767749}
+  - component: {fileID: 226767752}
+  - component: {fileID: 226767751}
   m_Layer: 5
   m_Name: Exit Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &226767748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -869,6 +871,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226767747}
   m_CullTransparentMesh: 1
+--- !u!114 &226767751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226767747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6b64f8b54437941a058911aa78f5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageName: ExitPage
+  fadeTime: 2
+  exitPanel: {fileID: 108447936}
+  popDuration: 2
+--- !u!225 &226767752
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226767747}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &236596381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,16 +1056,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230887482}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OnClickExit
-        m_Mode: 1
+      - m_Target: {fileID: 2147436389}
+        m_TargetAssemblyTypeName: UIPageManager, Assembly-CSharp
+        m_MethodName: ShowPage
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ExitPage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &257838311
@@ -1284,9 +1314,9 @@ RectTransform:
   - {fileID: 2134261273}
   m_Father: {fileID: 2139071642}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 750, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299446419
@@ -1333,8 +1363,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230887482}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 226767751}
+        m_TargetAssemblyTypeName: ExitPage, Assembly-CSharp
         m_MethodName: OnClickNo
         m_Mode: 1
         m_Arguments:
@@ -1801,8 +1831,8 @@ GameObject:
   - component: {fileID: 353681909}
   - component: {fileID: 353681911}
   - component: {fileID: 353681910}
-  - component: {fileID: 353681912}
   - component: {fileID: 353681913}
+  - component: {fileID: 353681914}
   m_Layer: 5
   m_Name: MainPage
   m_TagString: Untagged
@@ -1868,22 +1898,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353681908}
   m_CullTransparentMesh: 1
---- !u!114 &353681912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353681908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b31f60d8d24e8f40ade4062e4728ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pageName: MainPage
-  mainSection: {fileID: 401710440}
-  canvasGroup: {fileID: 353681913}
-  fadeTime: 2
 --- !u!225 &353681913
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1896,6 +1910,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &353681914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353681908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f12ee1312c44694eb1cda11c036fb27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageName: MainPage
+  fadeTime: 3
 --- !u!1 &361532538
 GameObject:
   m_ObjectHideFlags: 0
@@ -3281,8 +3309,8 @@ GameObject:
   - component: {fileID: 819743075}
   - component: {fileID: 819743077}
   - component: {fileID: 819743076}
-  - component: {fileID: 819743079}
   - component: {fileID: 819743078}
+  - component: {fileID: 819743079}
   m_Layer: 5
   m_Name: 'Setting Background  '
   m_TagString: Untagged
@@ -3371,13 +3399,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 819743074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b31f60d8d24e8f40ade4062e4728ed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e139ad0f342bcc48afe1570dd3c4163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pageName: SettingPage
-  mainSection: {fileID: 819743075}
-  canvasGroup: {fileID: 819743078}
   fadeTime: 2
+  subtitleText: {fileID: 1683647815}
+  subtitleToggle: {fileID: 1188645650}
+  volumnSlider: {fileID: 1759284112}
 --- !u!1 &829917777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3412,9 +3441,9 @@ RectTransform:
   - {fileID: 1328309404}
   m_Father: {fileID: 2139071642}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &829917779
@@ -3460,7 +3489,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829917780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 226767747}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829917780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3800,8 +3841,8 @@ RectTransform:
   - {fileID: 145880869}
   - {fileID: 819743075}
   - {fileID: 1012016216}
-  - {fileID: 353681909}
   - {fileID: 226767748}
+  - {fileID: 353681909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3956,9 +3997,9 @@ GameObject:
   - component: {fileID: 1012016216}
   - component: {fileID: 1012016218}
   - component: {fileID: 1012016217}
-  - component: {fileID: 1012016220}
   - component: {fileID: 1012016219}
   - component: {fileID: 1012016221}
+  - component: {fileID: 1012016222}
   m_Layer: 5
   m_Name: 'Loading Background '
   m_TagString: Untagged
@@ -4036,22 +4077,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1012016220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012016215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b31f60d8d24e8f40ade4062e4728ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pageName: LoadingPage
-  mainSection: {fileID: 1012016216}
-  canvasGroup: {fileID: 1012016219}
-  fadeTime: 2
 --- !u!114 &1012016221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4066,6 +4091,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingBarFill: {fileID: 515914481}
   minimumLoadTime: 2
+--- !u!114 &1012016222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012016215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34dcd4930361ade40a6363dcc9172082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageName: StoryPage
+  fadeTime: 2
 --- !u!1 &1075425806
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,7 +4272,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: LoadingPage
+          m_StringArgument: StoryPage
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2052803144}
@@ -4637,7 +4676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb601e898171ce942b9df5a4b73516c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumnSlider: {fileID: 1759284112}
   CollectSound: {fileID: 0}
   ShotSound: {fileID: 0}
   ReloadSound: {fileID: 0}
@@ -4650,7 +4688,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1230887481}
-  - component: {fileID: 1230887482}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -4673,18 +4710,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1230887482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230887480}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f45a6bfc4879b741a541dc444e3990e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1267659729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,7 +5014,7 @@ GameObject:
   - component: {fileID: 1428955540}
   - component: {fileID: 1428955539}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5059,7 +5084,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230887482}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: OnClickSettringsBack
         m_Mode: 1
@@ -5719,19 +5744,7 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1217423541}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: ChangeVolumn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &1759284113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6710,9 +6723,9 @@ RectTransform:
   - {fileID: 299446418}
   m_Father: {fileID: 108447936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -350}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2139071643
@@ -6809,9 +6822,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pages:
-  - {fileID: 353681912}
-  - {fileID: 1012016220}
+  - {fileID: 353681914}
+  - {fileID: 1012016222}
   - {fileID: 819743079}
+  - {fileID: 226767751}
   currentPage: {fileID: 0}
 --- !u!4 &2147436390
 Transform:

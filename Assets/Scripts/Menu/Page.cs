@@ -5,19 +5,32 @@ using UnityEngine.UIElements;
 using DG.Tweening;
 using System;
 
-public class Page  :MonoBehaviour
+public class Page : MonoBehaviour  
 {
+    [Header("Page Settings")]
     public string pageName;
-    public RectTransform mainSection;
-    public CanvasGroup canvasGroup;
-    public float fadeTime;
-    public void PageClose()
+    [SerializeField] protected float fadeTime;
+
+    protected CanvasGroup canvasGroup;
+
+    protected virtual void Awake()
     {
-        canvasGroup.DOFade(0, fadeTime);
+        InitializeComponents();
+    }
+    protected virtual void InitializeComponents()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+   
+    public async void PageClose()
+    {
+        canvasGroup.DOFade(0, fadeTime).SetUpdate(true);
+        //await canvasGroup.DOFade(0, fadeTime).AsyncWaitForCompletion();
     }
 
-    public void PageOpen()
+    public async void PageOpen()
     {
-        canvasGroup.DOFade(1, fadeTime);
+        canvasGroup.DOFade(1, fadeTime).SetUpdate(true);
+        //await canvasGroup.DOFade(0, fadeTime).AsyncWaitForCompletion();
     }
 }
